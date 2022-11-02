@@ -17,7 +17,10 @@ call plug#begin('~/.vim/plugged')
 "Install
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+
+Plug 'preservim/vimux'
 Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
@@ -40,6 +43,7 @@ nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>pi :PlugInstall<CR>
+nmap <Leader>ci :CocInstall
 
 "coc 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
@@ -61,5 +65,11 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+nnoremap <Leader>nd :!node %<cr>
 
+"vim transparancy
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 
